@@ -12,6 +12,7 @@ app = FastAPI(title="Watch Collection API")
 origins = [
     "https://lovingly-valuable-rhino.cloudpub.ru",  # Фронтенд
     "http://localhost:5173",  # Локальная разработка
+    "*"  # Разрешить всё (на время тестов)
 ]
 
 # Настройка CORS
@@ -22,6 +23,7 @@ app.add_middleware(
     allow_methods=["*"],  # Разрешить все методы (GET, POST и т.д.)
     allow_headers=["*"],  # Разрешить все заголовки
 )
+
 
 
 # ✅ Подключаем маршруты
