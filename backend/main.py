@@ -7,14 +7,22 @@ from api.routes import router
 
 app = FastAPI(title="Watch Collection API")
 
-# ✅ Правильная настройка CORS
+
+# Разрешённые домены (замени на свои)
+origins = [
+    "https://lovingly-valuable-rhino.cloudpub.ru",  # Фронтенд
+    "http://localhost:5173",  # Локальная разработка
+]
+
+# Настройка CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Разрешает запросы со всех источников (ПОКА ВСЕ РАЗРЕШАЕМ)
+    allow_origins=origins,  # Разрешённые домены
     allow_credentials=True,
-    allow_methods=["*"],  # Разрешаем все HTTP методы (GET, POST, PUT, DELETE)
-    allow_headers=["*"],  # Разрешаем все заголовки
+    allow_methods=["*"],  # Разрешить все методы (GET, POST и т.д.)
+    allow_headers=["*"],  # Разрешить все заголовки
 )
+
 
 # ✅ Подключаем маршруты
 app.include_router(router)
