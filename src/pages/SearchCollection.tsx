@@ -19,13 +19,13 @@ const EditCollection: React.FC = () => {
 
   // Загрузка данных
   useEffect(() => {
-    fetch("http://127.0.0.1:8001/watches/filter")
+    fetch("https://zherebetsky.onrender.com/watches/filter")
       .then((res) => res.json())
       .then((data) => setWatches(data))
       .catch((err) => console.error("Ошибка загрузки часов:", err));
 
     // Загружаем фильтры
-    fetch("http://127.0.0.1:8001/filters")
+    fetch("https://zherebetsky.onrender.com/filters")
       .then((res) => res.json())
       .then((data) => setFilters(data))
       .catch((err) => console.error("Ошибка загрузки фильтров:", err));
@@ -33,7 +33,7 @@ const EditCollection: React.FC = () => {
 
   // Применение фильтров
   const applyFilters = () => {
-    let url = "http://127.0.0.1:8001/watches/filter?";
+    let url = "https://zherebetsky.onrender.com/watches/filter?";
     Object.keys(selectedFilters).forEach((key) => {
       if (selectedFilters[key]) {
         url += `${key}=${selectedFilters[key]}&`;

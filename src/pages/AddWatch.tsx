@@ -48,7 +48,7 @@ const AddWatch: React.FC = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8001/watches", {
+      const response = await fetch("https://zherebetsky.onrender.com/watches", {
         method: "POST",
         body: formDataToSend,
       });

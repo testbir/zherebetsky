@@ -125,6 +125,6 @@ def filter_watches(
     watches = df.fillna("").to_dict(orient="records")
 
     for watch in watches:
-        watch["PhotoURL"] = f"http://127.0.0.1:8001/photos/{os.path.basename(watch['Photo'])}"
+        watch["PhotoURL"] = f"https://zherebetsky.onrender.com/photos/{os.path.basename(watch['Photo'])}"
 
     return watches
