@@ -1,0 +1,172 @@
+/* editcollection.css */
+
+.edit-collection {
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    min-height: 100vh; /* Чтобы страницы не обрезались */
+    width: 90vw; /* ✅ Ширина страницы 90% */
+    margin: 0 auto; /* ✅ Центрируем */
+    margin-top: 10%;
+}
+
+/* Кнопка сортировки */
+.sort-button {
+    position: fixed;
+    left: 7%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 26px;
+    padding: 12px 24px;
+    background-color: #EBEBEB;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.sort-button:hover {
+    background-color: #f5f5f5b9;
+}
+
+.search-icon{
+    margin-left: 10px;
+    width: 20px;
+    top: 10px;
+}
+
+/* 📌 Сетка карточек (адаптивная: 3 на ПК, 2 при уменьшении, 1 на мобилке) */
+.watch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ✅ 3 карточки, если влезает */
+    gap: 25px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 90vw; /* ✅ Максимальная ширина 90% экрана */
+    margin: 0 auto; /* ✅ Центрируем */
+}
+
+/* ✅ Карточка часов */
+.watch-card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 280px; /* Чтобы карточки не сжимались */
+    margin: 0 auto;
+}
+
+.watch-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Фото в карточке */
+.watch-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* ✅ Заполняет ячейку, но не выходит за границы */
+    border-radius: 10px;
+}
+
+/* ✅ Текст в карточке */
+.watch-card h3 {
+    font-size: 20px;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.watch-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* ✅ Цена */
+.watch-price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #28a745;
+    margin-top: 5px;
+}
+
+/* ✅ Адаптивность */
+@media (max-width: 1024px) { /* Если экран меньше 1024px, только 2 карточки */
+    .sort-button {
+        left: 5%;
+    }
+    .edit-collection{
+        margin-top: 40%;
+    }
+    .watch-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) { /* Если экран меньше 768px, только 1 карточка */
+    .sort-button {
+        left: 20px;
+    }
+    .edit-collection{
+        margin-top: 120vh;
+    }    
+    .watch-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* ✅ Стили для модального окна */
+.modal-overlay {
+    position: fixed; /* ✅ Фиксированное положение */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* ✅ Делаем поверх всего */
+}
+
+/* ✅ Контейнер контента модального окна */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    text-align: left;
+    position: relative;
+    z-index: 1001; /* ✅ Гарантируем поверх overlay */
+}
+
+/* ✅ Кнопка закрытия */
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    background: #d6d6d6;
+    color: rgb(100, 100, 100);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #d6d6d688;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 300px; /* ✅ Ограничиваем высоту */
+    object-fit: contain; /* ✅ Вписывает картинку внутрь, не выходя за границы */
+    border-radius: 10px;
+}

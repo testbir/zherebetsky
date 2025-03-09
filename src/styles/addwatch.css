@@ -1,0 +1,116 @@
+/* addwatch.css */
+
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter.ttf') format('truetype');
+    font-weight: 100 900; 
+    font-style: normal;
+  }
+
+
+/* Основной контейнер */
+.add-watch-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+/* Стилизация формы */
+.add-watch-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+/* Два столбца на ПК, один на телефоне */
+.form-columns {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Делаем два столбца */
+.form-left, .form-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+/* Поля ввода */
+.add-watch-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: #00000092;
+}
+
+.add-watch-form input, 
+.add-watch-form select, 
+.add-watch-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Убираем стрелки у числового поля "Цена" в Chrome, Safari и Edge */
+.add-watch-form input[type="number"]::-webkit-outer-spin-button,
+.add-watch-form input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Убираем стрелки у числового поля "Цена" (Chrome, Safari, Edge, Firefox) */
+.add-watch-form input[type="number"] {
+    appearance: none; /* ✅ Стандартное свойство */
+    -webkit-appearance: none; /* ✅ Safari, Chrome */
+    -moz-appearance: textfield; /* ✅ Firefox */
+}
+
+
+/* Поле комментария */
+.add-watch-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Кнопка отправки */
+.submit-button {
+    margin-top: 20px;
+    background-color: #6C6C6C;
+    color: #E2E2E2;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: rgba(107, 107, 107, 0.81);
+}
+
+
+/* Адаптивность (мобильные устройства) */
+@media (max-width: 768px) {
+    .add-watch-form {
+        width: 90%;
+    }
+
+    .form-columns {
+        flex-direction: column; /* ✅ Столбцы превращаются в один */
+    }
+
+    .form-left, .form-right {
+        width: 100%;
+    }
+}

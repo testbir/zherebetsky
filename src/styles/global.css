@@ -1,0 +1,10 @@
+/* Фон для всего приложения */
+body {
+    margin: 0;
+    font-family: Inter;
+    background-color: #DBDBDB; /* Светло-серый фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
